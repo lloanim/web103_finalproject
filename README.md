@@ -11,8 +11,9 @@ Designed and developed by: Lloani M, Kevon Dawkins, Victoria Zhunio, Dhimy Jean
 
 ### Description and Purpose
 
-PrepWise is a full-stack meal-planning and pantry-management application that helps users make better use of the ingredients they already have. The app allows users to track pantry items, discover relevant recipes, organize weekly meals, and create shopping lists for missing ingredients.
-Its purpose is to simplify meal planning, reduce food waste, and help users manage grocery spending more efficiently.
+PrepWise is a full-stack meal-planning and pantry-management application designed to help users make more efficient decisions about what to cook and what groceries they actually need. The platform allows users to manage pantry inventory, discover recipes based on available ingredients, organize meals for the week, save preferred recipes, and generate shopping lists for missing items.
+
+The purpose of PrepWise is to bring several everyday food-planning tasks into one centralized application. By connecting pantry tracking with recipe discovery and meal planning, the app helps users save time, reduce unnecessary grocery purchases, minimize food waste, and maintain a more organized approach to preparing meals.
 
 ### Inspiration
 
