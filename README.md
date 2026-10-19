@@ -4,7 +4,7 @@ CodePath WEB103 Final Project
 
 Designed and developed by: Lloani M, Kevon Dawkins, Victoria Zhunio, Dhimy Jean
 
-🔗 Link to deployed app: we use vercel app
+🔗 Link to deployed app: we use render app
 
 ## About
 
@@ -21,11 +21,10 @@ Many people have busy schedules during the week and may not have enough time to 
 
 ## Tech Stack
 
-Frontend: React, React Router, JavaScript, CSS
-
-Backend: Node.js, Express.js
-
-Database: PostgreSQL
+- **Frontend:** React, React Router, JavaScript,CSS
+- **Backend:** Node.js, Express.js
+- **Database:** PostgreSQL
+- **Deployment:** Render
 
 ## Features
 
