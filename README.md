@@ -1,4 +1,4 @@
-# [your app name here]
+# PrepWise
 
 CodePath WEB103 Final Project
 
@@ -17,13 +17,15 @@ The purpose of PrepWise is to bring several everyday food-planning tasks into on
 
 ### Inspiration
 
-[text goes here]
+Many people have busy schedules during the week and may not have enough time to decide what to cook or prepare meals. Planning meals ahead of time, especially during the weekend, can help make weekdays less stressful. Having a grocery list that shows the ingredients needed for recipes they want to try also makes shopping easier and helps people prepare in advance when they have time to visit the store. 
 
 ## Tech Stack
 
-Frontend:
+Frontend: React, React Router, JavaScript, CSS
 
-Backend:
+Backend: Node.js, Express.js
+
+Database: PostgreSQL
 
 ## Features
 
