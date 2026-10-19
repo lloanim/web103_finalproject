@@ -4,13 +4,16 @@ CodePath WEB103 Final Project
 
 Designed and developed by: Lloani M, Kevon Dawkins, Victoria Zhunio, Dhimy Jean
 
-🔗 Link to deployed app:
+🔗 Link to deployed app: we use vercel app
 
 ## About
 
+
 ### Description and Purpose
 
-[text goes here]
+PrepWise is a full-stack meal-planning and pantry-management application that helps users make better use of the ingredients they already have. The app allows users to track pantry items, discover relevant recipes, organize weekly meals, and create shopping lists for missing ingredients.
+
+Its purpose is to simplify meal planning, reduce food waste, and help users manage grocery spending more efficiently.
 
 ### Inspiration
 
