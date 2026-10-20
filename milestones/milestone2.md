@@ -8,8 +8,8 @@ This unit, be sure to complete all tasks listed below. To complete a task, place
 
 - [x] In `planning/wireframes.md`: add wireframes for at least three pages in your web app.
   - [x] Include a list of pages in your app
-- [ ] In `planning/entity_relationship_diagram.md`: add the entity relationship diagram you developed for your database.
-  - [ ] Your entity relationship diagram should include the tables in your database.
+- [x] In `planning/entity_relationship_diagram.md`: add the entity relationship diagram you developed for your database.
+  - [x] Your entity relationship diagram should include the tables in your database.
 - [ ] Prepare your three-minute pitch presentation, to be presented during Unit 7 (the next unit).
   - [ ] You do **not** need to submit any materials in advance of your pitch.
 - [ ] In this document, complete all three questions in the **Reflection** section below
