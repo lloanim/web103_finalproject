@@ -30,6 +30,10 @@ PrepWise uses PostgreSQL to manage pantry inventories, recipes, ingredients, wee
 
 ![PrepWise Database ERD](assets/prepwise-erd.png)
 
+## ERD Video Explanation
+
+[Watch our PrepWise ERD Explanation](assets/Entity_Explanation.mp4)
+
 ## Editable Diagram Source
 
 The original DBML schema is available in `assets/prepwise-erd.dbml` and can be imported into dbdiagram.io for future modifications.
