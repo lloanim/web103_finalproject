@@ -8,6 +8,22 @@
 
 **Team Members:** Lloani M, Kevon Dawkins, Victoria Zhunio, Dhimy Jean
 
+## Team Roles and Responsibilities
+
+| Team Member | Role | Responsibilities |
+|---|---|---|
+| Lloani M | Backend Developer | Build Express.js API routes, implement server logic, and integrate the database. |
+| Victoria Zhunio | Frontend Developer | Develop the React interface, navigation, recipe pages, and interactive features. |
+| Kevon Dawkins | Database Developer | Implement PostgreSQL tables, relationships, seed data, and database queries. |
+| Dhimy Jean | To Be Confirmed | Responsibilities pending team confirmation. |
+
+## Development Coordination
+
+- Frontend connects to backend through RESTful APIs.
+- Backend handles application logic and database operations.
+- Database development supports pantry inventory, recipes, meal planning, and shopping lists.
+- All team members participate in testing, integration, and final deployment.
+
 ## Milestone 1 — Project Planning
 
 **Deadline:** October 19, 2026  
