@@ -41,14 +41,14 @@
 ## Milestone 2 — Design and Architecture
 
 **Deadline:** October 26, 2026  
-**Status:** In Progress
+**Status:** Complete
 
 - [x] Create wireframes for three application pages.
 - [x] Document the application page list.
-- [ ] Complete and embed the database Entity Relationship Diagram.
-- [ ] Prepare a three-minute project pitch for Unit 7.
-- [ ] Complete three reflection questions.
-- [ ] Verify all diagrams display correctly on GitHub.
+- [x] Complete and embed the database Entity Relationship Diagram.
+- [x] Prepare a three-minute project pitch for Unit 7.
+- [x] Complete three reflection questions.
+- [x] Verify all diagrams display correctly on GitHub.
 
 **Deliverables:** `planning/wireframes.md`, `planning/entity_relationship_diagram.md`, `milestones/milestone2.md`
 
