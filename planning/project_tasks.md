@@ -15,7 +15,7 @@
 | Lloani M | Backend Developer | Build Express.js API routes, implement server logic, and integrate the database. |
 | Victoria Zhunio | Frontend Developer | Develop the React interface, navigation, recipe pages, and interactive features. |
 | Kevon Dawkins | Database Developer | Implement PostgreSQL tables, relationships, seed data, and database queries. |
-| Dhimy Jean | To Be Confirmed | Responsibilities pending team confirmation. |
+| Dhimy Jean | Full-Stack Developer and Testing | Own pantry inventory (add, edit, view, and delete ingredients) across the database, API, and React interface; set up the project structure and shared units; connect the frontend, backend, and database; test features and review work across all roles. |
 
 ## Development Coordination
 
