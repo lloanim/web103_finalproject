@@ -1,0 +1,10 @@
+{
+  "name": "prepwise",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n server,client \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "db:setup": "psql \"$DATABASE_URL\" -f database/schema.sql -f database/seed.sql"
+  },
+  "devDependencies": { "concurrently": "^9.0.0" }
+}
