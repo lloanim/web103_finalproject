@@ -2,7 +2,7 @@
 
 CodePath WEB103 Final Project
 
-Designed and developed by: Lloani M, Kevon Dawkins, Victoria Zhunio, Dhimy Jean
+Designed and developed by: Lloani M, Kevon Dawkins, Victoria Zhunio, Dhimy Jean, Sarin Sigma
 
 🔗 Link to deployed app: we use render here
 
