@@ -1,4 +1,4 @@
-
+import { useLocation } from "react-router-dom";
 import {
   useEffect,
   useRef,
@@ -58,6 +58,7 @@ function monday() {
 // ==========================================
 
 export default function MealPlanner() {
+  const location = useLocation();
 
   const [week, setWeek] =
     useState(monday);
@@ -85,6 +86,23 @@ export default function MealPlanner() {
   const lock = useRef(false);
 
   const start = dateKey(week);
+  useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  const requested = params.get("start");
+
+  if (!requested) return;
+
+  const date = new Date(requested + "T12:00:00");
+
+  if (Number.isNaN(date.getTime())) return;
+
+  date.setDate(
+    date.getDate() - ((date.getDay() + 6) % 7)
+  );
+
+  setWeek(date);
+  setReload((previous) => previous + 1);
+}, [location.key, location.search]);
 
   // Create seven days for this week.
 

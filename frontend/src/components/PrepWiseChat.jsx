@@ -8,6 +8,7 @@ import ChatWeeklyPlan from "./ChatWeeklyPlan.jsx";
 import ChatMealDBRecipes from "./ChatMealDBRecipes.jsx";
 import ChefMascot from "./ChefMascot.jsx";
 import VoiceInput from "./VoiceInput.jsx";
+import VoiceOutput from "./VoiceOutput.jsx";
 
 import "../styles/chat.css";
 
@@ -301,6 +302,7 @@ export default function PrepWiseChat({
           message,
           history,
           preferences,
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
         }
       );
 
@@ -562,6 +564,11 @@ export default function PrepWiseChat({
             </div>
 
           </div>
+
+          <VoiceOutput
+  reply={latestReply}
+  responseId={messages.length}
+/>
 
           {/* PREFERENCES PANEL */}
 
@@ -912,6 +919,13 @@ export default function PrepWiseChat({
 
           <form
             className="chat-input-form"
+onClickCapture={(event) => {
+  if (event.target.closest?.(".pw-mic")) {
+    window.dispatchEvent(
+      new Event("prepwise:stop-voice")
+    );
+  }
+}}
 
             onSubmit={(event) => {
               event.preventDefault();

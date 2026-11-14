@@ -14,6 +14,10 @@ const UNITS = [
   "cloves",
   "slices",
   "bulb",
+  "bunch",
+  "sprigs",
+  "pinch",
+  "stalks",
 ];
 
 export default function MealDBDiscovery({
@@ -117,8 +121,8 @@ export default function MealDBDiscovery({
 
           items: result.ingredients.map((item) => ({
             ...item,
-            quantity: "",
-            unit: "",
+            quantity: item.parsed?.quantity ?? "",
+            unit: item.parsed?.unit ?? "",
           })),
         });
 

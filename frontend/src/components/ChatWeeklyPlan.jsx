@@ -1,8 +1,9 @@
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../api.js";
 
 export default function ChatWeeklyPlan({ plan }) {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const [saved, setSaved] = useState(false);
@@ -22,6 +23,7 @@ export default function ChatWeeklyPlan({ plan }) {
       weekday: "long",
       month: "short",
       day: "numeric",
+      year: "numeric",
       timeZone: "UTC",
     });
   }
@@ -44,6 +46,8 @@ export default function ChatWeeklyPlan({ plan }) {
       );
 
       setSaved(true);
+      navigate(`/planner?start=${plan.start}`);
+
 
       setMessage(
         `${result.added} dinners added. ` +
@@ -196,7 +200,17 @@ export default function ChatWeeklyPlan({ plan }) {
         </button>
       )}
 
-      {/* GENERATE SHOPPING LIST BUTTON */}
+      {(saved || plan.entries.length === 0) && (
+  <button
+    type="button"
+    className="chat-shopping-btn"
+    onClick={() => navigate(`/planner?start=${plan.start}`)}
+  >
+    📅 View Saved Meal Plan
+  </button>
+)}
+
+{/* GENERATE SHOPPING LIST BUTTON */}
 
       {(saved || plan.entries.length === 0) && (
         <button

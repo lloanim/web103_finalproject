@@ -75,8 +75,8 @@ function MealDBCard({ meal }) {
 
           items: result.ingredients.map((item) => ({
             ...item,
-            quantity: "",
-            unit: "",
+           quantity: item.parsed?.quantity ?? "",
+          unit: item.parsed?.unit ?? "",
           })),
         });
 

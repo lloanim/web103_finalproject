@@ -1,5 +1,6 @@
 
 import express from "express";
+import { getChatDates, resolvePlanStart } from "../config/chatDates.js";
 
 import {
   pool,
@@ -888,10 +889,10 @@ async function planWeek(
 
 async function executeTool(
   name,
-
   args = {},
-
-  preferences
+  preferences,
+  dateContext,
+  message
 ) {
   switch (name) {
 
@@ -937,8 +938,7 @@ async function executeTool(
     case "plan_week":
 
       return planWeek(
-        args.start ?? null,
-
+        resolvePlanStart(args.start, dateContext, message),
         preferences
       );
 
@@ -1056,7 +1056,8 @@ RESPONSE STYLE:
 
 async function askGemini(
   contents,
-  preferences
+  preferences,
+  dateContext
 ) {
   const model =
     process.env.GEMINI_MODEL ||
@@ -1064,6 +1065,30 @@ async function askGemini(
     "gemini-3.5-flash-lite";
 
   const profileText = `
+CURRENT PREPWISE CALENDAR:
+
+User timezone: ${dateContext.timeZone}
+Today: ${dateContext.weekday}, ${dateContext.today}
+Tomorrow: ${dateContext.tomorrow}
+This calendar week: ${dateContext.thisMonday} through ${dateContext.thisSunday}
+Next calendar week: ${dateContext.nextMonday} through ${dateContext.nextSunday}
+
+CALENDAR RULES:
+- Use these actual dates, not dates from old chat history.
+- Never guess the current year.
+- If a user specifies a date without a year, use the current calendar context.
+- This week means Monday through Sunday.
+- Next week starts on the next Monday.
+- A seven-day plan without a specified date starts today.
+- If no date is specified, omit the plan_week start argument.
+- Preserve explicitly requested dates.
+- Preserve the relevant date when referring to an existing plan.
+- plan_week entries contains ONLY unoccupied dinner slots.
+- skippedDates contains days that ALREADY have saved dinners.
+- Empty entries with seven skippedDates means the entire week is planned.
+- Never describe occupied dinner slots as an empty calendar.
+- Use the actual dates returned by plan_week.
+
 CURRENT SAVED USER PROFILE:
 
 Dietary preference: ${preferences.diet}
@@ -1194,6 +1219,8 @@ router.post("/", async (req, res) => {
       req.body.preferences
     );
 
+    const dateContext = getChatDates(req.body?.timeZone);
+
     console.log(
       "AI Preferences:",
 
@@ -1291,8 +1318,8 @@ router.post("/", async (req, res) => {
 
       const data = await askGemini(
         contents,
-
-        preferences
+        preferences,
+        dateContext
       );
 
       const content =
@@ -1338,10 +1365,14 @@ router.post("/", async (req, res) => {
           });
         }
 
-        return res.json({
-          reply,
+       return res.json({
+      reply:
+        weeklyPlan?.entries?.length === 0 &&
+        weeklyPlan?.skippedDates?.length === 7
+          ? "All seven dinners are already saved for this week! Click Generate Shopping List below to calculate the ingredients you still need."
+          : reply,
 
-          toolsUsed,
+      toolsUsed,
 
           recommendations:
             weeklyPlan
@@ -1383,12 +1414,11 @@ router.post("/", async (req, res) => {
         try {
 
           result = await executeTool(
-
             call.name,
-
             call.args || {},
-
-            preferences
+            preferences,
+            dateContext,
+            message
           );
 
           // Store matching recipe cards.
