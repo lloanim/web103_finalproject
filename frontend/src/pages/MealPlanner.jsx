@@ -9,7 +9,7 @@ import { api } from "../api.js";
 
 import PageHeader from "../components/PageHeader.jsx";
 
-import "../styles/planner.css";
+import "../styles/dragPlanner.css";
 
 // ==========================================
 // MEAL PLANNER SETTINGS

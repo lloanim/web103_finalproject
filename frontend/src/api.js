@@ -209,3 +209,18 @@ export async function getRecipe(id) {
 
   return recipe;
 }
+
+
+// SHARED MEAL PLANNER API
+
+export const getMealPlan = (start) =>
+  api.get(`/meal-plan?start=${encodeURIComponent(start)}`);
+
+export const addMealPlanEntry = (entry) =>
+  api.post("/meal-plan", entry);
+
+export const updateMealPlanEntry = (id, changes) =>
+  api.patch(`/meal-plan/${id}`, changes);
+
+export const deleteMealPlanEntry = (id) =>
+  api.del(`/meal-plan/${id}`);

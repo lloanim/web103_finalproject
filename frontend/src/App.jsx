@@ -19,10 +19,47 @@ import Recipes from "./pages/Recipes.jsx";
 import Shopping from "./pages/Shopping.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import MealPlanner from "./pages/MealPlanner.jsx";
+import Planner from "./pages/Planner.jsx";
+import { Link, useLocation } from "react-router-dom";
 import SavedRecipes from "./pages/SavedRecipes.jsx";
 import KitchenStudio from "./pages/KitchenStudio.jsx";
 
 import "./styles/kitchen3.css";
+
+function PlannerSwitcher({ drag = false }) {
+  const location = useLocation();
+
+  return (
+    <div className={drag ? "pw-drag-planner" : "pw-team-planner"}>
+
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "10px",
+        marginBottom: "18px"
+      }}>
+
+        <Link
+          className={drag ? "btn" : "btn primary"}
+          to={"/planner" + location.search}
+        >
+          Weekly Planner
+        </Link>
+
+        <Link
+          className={drag ? "btn primary" : "btn"}
+          to={"/planner/drag" + location.search}
+        >
+          Drag & Drop Planner
+        </Link>
+
+      </div>
+
+      {drag ? <MealPlanner /> : <Planner />}
+
+    </div>
+  );
+}
 
 export default function App() {
   const navigate = useNavigate();
@@ -191,7 +228,12 @@ export default function App() {
 
           <Route
             path="planner"
-            element={<MealPlanner />}
+            element={<PlannerSwitcher />}
+          />
+
+          <Route
+            path="planner/drag"
+            element={<PlannerSwitcher drag />}
           />
 
           <Route
