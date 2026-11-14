@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../api.js";
 import PageHeader from "../components/PageHeader.jsx";
-import "../styles/planner.css";
+import "../styles/mealPlannerLegacy.css";
 
 function dateKey(date) {
   const year = date.getFullYear();

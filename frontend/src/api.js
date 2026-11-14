@@ -115,6 +115,7 @@ export const getRecipes = (params = {}) => {
   return api.get(path);
 };
 
+
 export const getRecipe = async (id) => {
   const recipe = await api.get(`/recipes/${id}`);
 
@@ -123,3 +124,21 @@ export const getRecipe = async (id) => {
 
   return recipe;
 };
+
+// Meal Planner API
+
+// Fetch planned meals
+export const getMealPlan = (start) =>
+  api.get(`/meal-plan?start=${start}`);
+
+// Add a recipe to meal plan
+export const addMealPlanEntry = (entry) =>
+  api.post("/meal-plan", entry);
+
+// Change a planned meal's date or meal type
+export const updateMealPlanEntry = (id, changes) =>
+  api.patch(`/meal-plan/${id}`, changes);
+
+// Remove a planned meal
+export const deleteMealPlanEntry = (id) =>
+  api.del(`/meal-plan/${id}`);
