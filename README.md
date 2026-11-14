@@ -41,6 +41,18 @@ npm run dev
 
 In development, Vite forwards `/api` requests to the backend.
 
+Optional settings (AI Chef chat, local database reset) are listed in `backend/.env.example`.
+
+### Deploying on Render
+
+The app deploys as one Render **Web Service**: Express serves the API and, when `NODE_ENV=production`, the built React app.
+
+1. Create a Render PostgreSQL database (the free tier allows one per workspace) and load it once: `psql "<External Database URL>?sslmode=require" -f database/schema.sql -f database/seed.sql`
+2. Create a Web Service from this repo with:
+   - **Build command:** `cd frontend && npm install --include=dev && npm run build && cd ../backend && npm install`
+   - **Start command:** `cd backend && npm start`
+   - **Environment:** `NODE_ENV=production`, `DATABASE_URL` (the database's **Internal** URL as shown; if the database is in another Render account, use its **External** URL with `?sslmode=require` added), and optionally `GEMINI_API_KEY` for the AI Chef
+
 ## Tech Stack
 
 - **Frontend:** React, React Router, JavaScript,CSS
@@ -65,12 +77,10 @@ Users can add recipes to a weekly meal plan and organize meals by day.
 
 [gif goes here]
 
-### Smart Shopping List
+### ✅ Smart Shopping List
 Users can create a shopping list for ingredients they still need to buy, including ingredients missing from planned recipes.
 
-![Smart Shopping List: add an item, add missing ingredients from a recipe, check off, and move bought items to the pantry](planning/assets/shopping-list.gif)
-
-Done so far: add, check off, and delete items, add a recipe's missing ingredients, combine matching units (g/kg, ml/l), and move bought items into the pantry. Still to do: fill the list from planned recipes once the Weekly Meal Planner is built.
+![Smart Shopping List: add a recipe's missing ingredients, generate items from this week's meal plan, check items off, and move bought items to the pantry](planning/assets/shopping-list.gif)
 
 ### ✅ Recipe Detail Modal
 Users can open a recipe in a modal without leaving the current page. The modal displays ingredients, instructions, preparation time, and other recipe details.

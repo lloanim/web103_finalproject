@@ -14,6 +14,7 @@ export default function Shopping() {
   const [recipes, setRecipes] = useState([]);
   const [recipeId, setRecipeId] = useState("");
   const [message, setMessage] = useState("");
+  const [busy, setBusy] = useState(false);
 
   const load = () => api.get("/shopping-list").then(setItems).catch((e) => setError(e.message));
   useEffect(() => {
@@ -21,11 +22,14 @@ export default function Shopping() {
     getRecipes().then(setRecipes).catch(() => setRecipes([]));
   }, []);
 
+  // Runs one request at a time; buttons are disabled while it runs
   async function run(action) {
     setError("");
     setMessage("");
+    setBusy(true);
     try { await action(); await load(); }
     catch (e) { setError(e.message); }
+    finally { setBusy(false); }
   }
 
   const toggle = (item) => run(() => api.patch(`/shopping-list/${item.id}`, { is_checked: !item.is_checked }));
@@ -38,6 +42,15 @@ export default function Shopping() {
       let text = `Moved ${moved} item${moved === 1 ? "" : "s"} to your pantry.`;
       if (skipped) text += ` ${skipped} stayed here because the unit doesn't match your pantry.`;
       setMessage(text);
+    });
+  }
+
+  // Uses POST /api/shopping-list/generate (#19): replaces the old generated items
+  // with what this week's meal plan still needs; manual items are kept
+  function generateFromPlan() {
+    run(async () => {
+      const { generated } = await api.post("/shopping-list/generate");
+      setMessage(generated ? `Added ${generated} item${generated === 1 ? "" : "s"} from this week's meal plan.` : "Your pantry already covers this week's meal plan.");
     });
   }
 
@@ -56,10 +69,10 @@ export default function Shopping() {
 
   const row = (i) => (
     <div key={i.id} className={`trow ${i.is_checked ? "checked" : ""}`}>
-      <input type="checkbox" checked={i.is_checked} onChange={() => toggle(i)} aria-label={`Mark ${i.name} as bought`} />
-      <div className="grow"><strong>{i.name}</strong> {i.source === "recipe" && <span className="pill info">from recipe</span>}</div>
+      <input type="checkbox" checked={i.is_checked} onChange={() => toggle(i)} disabled={busy} aria-label={`Mark ${i.name} as bought`} />
+      <div className="grow"><strong>{i.name}</strong> {i.source === "recipe" && <span className="pill info">from recipe</span>}{i.source === "generated" && <span className="pill info">from meal plan</span>}</div>
       <div className="qty">{fmtQty(i.quantity)} {i.unit}</div>
-      <button className="x" onClick={() => remove(i)} aria-label={`Delete ${i.name}`}>×</button>
+      <button className="x" onClick={() => remove(i)} disabled={busy} aria-label={`Delete ${i.name}`}>×</button>
     </div>
   );
 
@@ -74,7 +87,8 @@ export default function Shopping() {
           <option value="">Choose a recipe…</option>
           {recipes.map((r) => <option key={r.id} value={r.id}>{r.title}</option>)}
         </select>
-        <button className="btn" onClick={addMissing} disabled={!recipeId}>Add missing ingredients</button>
+        <button className="btn" onClick={addMissing} disabled={!recipeId || busy}>Add missing ingredients</button>
+        <button className="btn" onClick={generateFromPlan} disabled={busy}>Generate from this week's meal plan</button>
       </div>
 
       {message && <p className="success banner">{message}</p>}
@@ -94,8 +108,8 @@ export default function Shopping() {
           <div className="group-head">
             <h3 className="group-title">In cart</h3>
             <div className="actions">
-              <button className="btn small primary" onClick={moveToPantry}>Move to pantry</button>
-              <button className="btn small" onClick={clearChecked}>Clear checked</button>
+              <button className="btn small primary" onClick={moveToPantry} disabled={busy}>Move to pantry</button>
+              <button className="btn small" onClick={clearChecked} disabled={busy}>Clear checked</button>
             </div>
           </div>
           <div className="card table">{inCart.map(row)}</div>

@@ -8,6 +8,7 @@ import Shopping from "./pages/Shopping.jsx";
 import Planner from "./pages/Planner.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import SavedRecipes from "./pages/SavedRecipes.jsx";
+import RecipePage from "./pages/RecipePage.jsx";
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="pantry" element={<Pantry />} />
         <Route path="pantry/new" element={<PantryNew />} />
         <Route path="recipes" element={<Recipes />} />
+        <Route path="recipes/:id" element={<RecipePage />} />
         <Route path="planner" element={<Planner />} />
         <Route path="shopping" element={<Shopping />} />
         <Route path="saved" element={<SavedRecipes />} />

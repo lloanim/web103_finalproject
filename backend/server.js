@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 import chatRoutes from "./routes/chatRoutes.js";
 import referenceRoutes from "./routes/referenceRoutes.js";
 import pantryRoutes from "./routes/pantryRoutes.js";
@@ -31,6 +32,13 @@ app.use("/api/mealdb", mealdbRoutes);
 
 app.use("/api/reset", resetRoutes);
 app.use("/api/chat", chatRoutes);
+// In production (Render), Express also serves the built React app from frontend/dist
+if (process.env.NODE_ENV === "production") {
+  const dist = fileURLToPath(new URL("../frontend/dist", import.meta.url));
+  app.use(express.static(dist));
+  app.get(/^\/(?!api\/).*/, (_req, res) => res.sendFile(path.join(dist, "index.html")));
+}
+
 app.use("/api", notFound);
 app.use(errorHandler);
 
