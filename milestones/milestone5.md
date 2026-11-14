@@ -13,8 +13,8 @@ This unit, be sure to complete all tasks listed below. To complete a task, place
   - [ ] Under each feature you have completed, **include a GIF** showing feature functionality
 - [ ] In this document, complete the **Reflection** section below
 - [ ] 🚩🚩🚩**Complete the Final Project Feature Checklist section below**, detailing each feature you completed in the project (ONLY include features you implemented, not features you planned)
-- [ ] 🚩🚩🚩**Record a GIF showing a complete run-through of your app** that displays all the components included in the **Final Project Feature Checklist** below
-  - [ ] Include this GIF in the **Final Demo GIF** section below
+- [x] 🚩🚩🚩**Record a GIF showing a complete run-through of your app** that displays all the components included in the **Final Project Feature Checklist** below
+  - [x] Include this GIF in the **Final Demo GIF** section below
 
 ## Final Project Feature Checklist
 
@@ -59,7 +59,7 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
 - [x] The user can filter or sort items based on particular criteria as appropriate for your use case
 - [x] Data is automatically generated in response to a certain event or user action. Examples include generating a default inventory for a new user starting a game or creating a starter set of tasks for a user creating a new task app account
 - [x] Data submitted via a POST or PATCH request is validated before the database is updated (e.g. validating that an event is in the future before allowing a new event to be created)
-  - [ ] *To receive full credit, please be sure to demonstrate in your walkthrough that for certain inputs, the item will NOT be successfully created or updated.*
+  - [x] *To receive full credit, please be sure to demonstrate in your walkthrough that for certain inputs, the item will NOT be successfully created or updated.*
 
 ### Stretch Features
 
@@ -80,7 +80,9 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
 
 ## Final Demo GIF
 
-🔗 [Here's a GIF walkthrough of the final project](👉🏾👉🏾👉🏾 your link here)
+🔗 [Here's a GIF walkthrough of the final project](../planning/assets/final-demo.gif)
+
+![PrepWise walkthrough: dashboard, pantry add (with a rejected duplicate), edit and delete, recipe filters and sorting, recipe modal, /recipes/:id page, meal planner, shopping list generated from the meal plan, move to pantry, saved recipes, and a not-found error](../planning/assets/final-demo.gif)
 
 ## Reflection
 
