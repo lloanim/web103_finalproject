@@ -1,5 +1,6 @@
 
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader.jsx";
 import RecipeCard from "../components/RecipeCard.jsx";
 import RecipeDetail from "../components/RecipeDetail.jsx";
@@ -325,7 +326,10 @@ export default function Recipes() {
               Couldn't load recipe: {detailError}
             </p>
           ) : recipeDetails ? (
-            <RecipeDetail recipe={recipeDetails} />
+            <>
+              <RecipeDetail recipe={recipeDetails} />
+              <p><Link to={`/recipes/${recipeDetails.id}`}>Open as full page →</Link></p>
+            </>
           ) : (
             <p className="muted">
               Loading recipe details...
