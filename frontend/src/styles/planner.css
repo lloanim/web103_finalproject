@@ -1,5 +1,5 @@
 /* Weekly Meal Planner */
-.planner-grid {
+:where(.pw-team-planner) .planner-grid {
     display: grid;
     grid-template-columns: repeat(7, 230px);
     gap: 14px;
@@ -10,7 +10,7 @@
 
 
 
-.planner-day {
+:where(.pw-team-planner) .planner-day {
     min-width: 0;
     padding: 0;
     background: transparent;
@@ -19,31 +19,31 @@
     box-shadow: none;
 }
 
-.planner-day h2 {
+:where(.pw-team-planner) .planner-day h2 {
     font-size: 1rem;
     margin-bottom: 6px;
 }
 
-.planner-day > p {
+:where(.pw-team-planner) .planner-day > p {
     font-size: 0.8rem;
     color: var(--muted);
     margin-bottom: 16px;
 }
 
-.planner-meals {
+:where(.pw-team-planner) .planner-meals {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.planner-meal-slot {
+:where(.pw-team-planner) .planner-meal-slot {
     background: var(--bg);
     border: 1px solid var(--line);
     border-radius: 10px;
     padding: 10px;
 }
 
-.planner-meal-slot h3 {
+:where(.pw-team-planner) .planner-meal-slot h3 {
     font-size: 0.85rem;
     color: var(--brand-dark);
     margin-bottom: 10px;
@@ -51,7 +51,7 @@
 
 
 /* Planned meal cards */
-.planner-planned-meal {
+:where(.pw-team-planner) .planner-planned-meal {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -62,7 +62,7 @@
     border-radius: 10px;
 }
 
-.planner-planned-meal > button:first-child {
+:where(.pw-team-planner) .planner-planned-meal > button:first-child {
     background: none;
     border: none;
     padding: 0;
@@ -73,11 +73,11 @@
     cursor: pointer;
 }
 
-.planner-planned-meal > button:first-child:hover {
+:where(.pw-team-planner) .planner-planned-meal > button:first-child:hover {
     text-decoration: underline;
 }
 
-.planner-planned-meal label {
+:where(.pw-team-planner) .planner-planned-meal label {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -85,17 +85,17 @@
     color: var(--muted);
 }
 
-.planner-planned-meal input,
-.planner-planned-meal select {
+:where(.pw-team-planner) .planner-planned-meal input,
+:where(.pw-team-planner) .planner-planned-meal select {
     width: 100%;
     font-size: 0.8rem;
     padding: 6px;
 }
 
 /* Planner buttons */
-.planner-meal-slot > button,
-.planner-planned-meal > button:last-child,
-.planner-recipe-option button {
+:where(.pw-team-planner) .planner-meal-slot > button,
+:where(.pw-team-planner) .planner-planned-meal > button:last-child,
+:where(.pw-team-planner) .planner-recipe-option button {
     padding: 7px 10px;
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -107,28 +107,28 @@
     cursor: pointer;
 }
 
-.planner-meal-slot > button:hover,
-.planner-recipe-option button:hover {
+:where(.pw-team-planner) .planner-meal-slot > button:hover,
+:where(.pw-team-planner) .planner-recipe-option button:hover {
     background: var(--brand-soft);
 }
 
-.planner-planned-meal > button:last-child {
+:where(.pw-team-planner) .planner-planned-meal > button:last-child {
     color: var(--red);
 }
 
-.planner-planned-meal > button:last-child:hover {
+:where(.pw-team-planner) .planner-planned-meal > button:last-child:hover {
     background: var(--red-soft);
 }
 
 /* Recipe selection modal */
-.planner-recipe-list {
+:where(.pw-team-planner) .planner-recipe-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 16px;
 }
 
-.planner-recipe-option {
+:where(.pw-team-planner) .planner-recipe-option {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -142,23 +142,23 @@
 
 /* Responsive planner layout */
 @media (max-width: 1200px) {
-    .planner-grid {
+    :where(.pw-team-planner) .planner-grid {
         grid-template-columns: repeat(4, minmax(180px, 1fr));
     }
 }
 
 @media (max-width: 800px) {
-    .planner-grid {
+    :where(.pw-team-planner) .planner-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 480px) {
-    .planner-grid {
+    :where(.pw-team-planner) .planner-grid {
         grid-template-columns: 1fr;
     }
 
-    .planner-recipe-option {
+    :where(.pw-team-planner) .planner-recipe-option {
         flex-direction: column;
         align-items: stretch;
     }
@@ -166,13 +166,13 @@
 
 
 /* Planner header */
-.planner-header {
+:where(.pw-team-planner) .planner-header {
     padding-bottom: 24px;
     border-bottom: 1px solid var(--line);
     margin-bottom: 28px;
 }
 
-.planner-header-top {
+:where(.pw-team-planner) .planner-header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -180,20 +180,20 @@
     flex-wrap: wrap;
 }
 
-.planner-header-top p {
+:where(.pw-team-planner) .planner-header-top p {
     margin: 8px 0 0;
     color: var(--muted);
     font-size: 0.9rem;
 }
 
-.planner-header-actions {
+:where(.pw-team-planner) .planner-header-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
 
 /* Week navigation */
-.planner-navigation {
+:where(.pw-team-planner) .planner-navigation {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -201,14 +201,14 @@
     flex-wrap: wrap;
 }
 
-.planner-week-range {
+:where(.pw-team-planner) .planner-week-range {
     font-size: 1.2rem;
     font-weight: 700;
     margin: 0;
     color: var(--ink);
 }
 
-.planner-arrow {
+:where(.pw-team-planner) .planner-arrow {
     width: 38px;
     height: 38px;
     justify-content: center;
@@ -216,7 +216,7 @@
     font-size: 1.1rem;
 }
 
-.planner-today {
+:where(.pw-team-planner) .planner-today {
     font: inherit;
     font-size: 0.85rem;
     font-weight: 600;
@@ -228,37 +228,37 @@
     cursor: pointer;
 }
 
-.planner-today:hover {
+:where(.pw-team-planner) .planner-today:hover {
     background: var(--brand-soft);
 }
 
 
 /* Calendar day headings */
-.planner-day-heading {
+:where(.pw-team-planner) .planner-day-heading {
     margin-bottom: 14px;
 }
 
-.planner-day-heading h2 {
+:where(.pw-team-planner) .planner-day-heading h2 {
     font-family: inherit;
     font-size: 0.85rem;
     font-weight: 600;
     margin: 0 0 6px;
 }
 
-.planner-day-date {
+:where(.pw-team-planner) .planner-day-date {
     display: flex;
     align-items: baseline;
     gap: 8px;
 }
 
-.planner-day-number {
+:where(.pw-team-planner) .planner-day-number {
     font-family: "Fraunces", Georgia, serif;
     font-size: 2rem;
     line-height: 1.1;
     color: var(--ink);
 }
 
-.planner-day-month {
+:where(.pw-team-planner) .planner-day-month {
     font-size: 0.65rem;
     text-transform: uppercase;
     color: var(--muted);
@@ -266,7 +266,7 @@
 
 
 /* Allow the calendar to scroll horizontally */
-.planner-grid {
+:where(.pw-team-planner) .planner-grid {
     overflow-x: auto;
     padding-bottom: 14px;
     scrollbar-width: thin;
@@ -274,22 +274,22 @@
 }
 
 /* Brown scrollbar for Chrome and Edge */
-.planner-grid::-webkit-scrollbar {
+:where(.pw-team-planner) .planner-grid::-webkit-scrollbar {
     height: 8px;
 }
 
-.planner-grid::-webkit-scrollbar-track {
+:where(.pw-team-planner) .planner-grid::-webkit-scrollbar-track {
     background: #f0e4d5;
     border-radius: 10px;
 }
 
-.planner-grid::-webkit-scrollbar-thumb {
+:where(.pw-team-planner) .planner-grid::-webkit-scrollbar-thumb {
     background: #a67c63;
     border-radius: 10px;
 }
 
 /* Scrollable weekly calendar */
-.planner-scroll {
+:where(.pw-team-planner) .planner-scroll {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -301,16 +301,16 @@
     scrollbar-color: #a67c63 #e9ddcd;
 }
 
-.planner-scroll::-webkit-scrollbar {
+:where(.pw-team-planner) .planner-scroll::-webkit-scrollbar {
     height: 8px;
 }
 
-.planner-scroll::-webkit-scrollbar-track {
+:where(.pw-team-planner) .planner-scroll::-webkit-scrollbar-track {
     background: #e9ddcd;
     border-radius: 10px;
 }
 
-.planner-scroll::-webkit-scrollbar-thumb {
+:where(.pw-team-planner) .planner-scroll::-webkit-scrollbar-thumb {
     background: #a67c63;
     border-radius: 10px;
 }
@@ -318,7 +318,7 @@
 
 
 /* Empty meal slots */
-.planner-meal-slot {
+:where(.pw-team-planner) .planner-meal-slot {
     background: rgba(255, 253, 248, 0.55);
     border: 1px dashed var(--line);
     border-radius: 10px;
@@ -329,7 +329,7 @@
     gap: 10px;
 }
 
-.planner-meal-slot h3 {
+:where(.pw-team-planner) .planner-meal-slot h3 {
     font-family: inherit;
     font-size: 0.65rem;
     font-weight: 700;
@@ -339,7 +339,7 @@
     margin: 0;
 }
 
-.planner-meal-slot > button {
+:where(.pw-team-planner) .planner-meal-slot > button {
     align-self: flex-start;
     margin-top: auto;
     border: none;
@@ -350,44 +350,44 @@
     color: var(--muted);
 }
 
-.planner-meal-slot > button:hover {
+:where(.pw-team-planner) .planner-meal-slot > button:hover {
     background: transparent;
     color: var(--brand-dark);
 }
 
 
 /* Color-coded occupied meal slots */
-.planner-meal-slot.has-meal {
+:where(.pw-team-planner) .planner-meal-slot.has-meal {
     border-style: solid;
 }
 
-.planner-meal-slot.has-meal.breakfast {
+:where(.pw-team-planner) .planner-meal-slot.has-meal.breakfast {
     background: #f3e3cb;
     border-color: #e8d1ae;
 }
 
-.planner-meal-slot.has-meal.lunch {
+:where(.pw-team-planner) .planner-meal-slot.has-meal.lunch {
     background: #e3ebd9;
     border-color: #cbdabf;
 }
 
-.planner-meal-slot.has-meal.dinner {
+:where(.pw-team-planner) .planner-meal-slot.has-meal.dinner {
     background: #f1dfd9;
     border-color: #e6c9c0;
 }
 
-.planner-meal-slot.has-meal.snack {
+:where(.pw-team-planner) .planner-meal-slot.has-meal.snack {
     background: #eae3f3;
     border-color: #d9cbe8;
 }
 
-.planner-meal-slot.has-meal h3 {
+:where(.pw-team-planner) .planner-meal-slot.has-meal h3 {
     color: var(--ink);
 }
 
 
 /* Compact planned recipe cards */
-.planner-planned-meal {
+:where(.pw-team-planner) .planner-planned-meal {
     position: relative;
     background: transparent;
     border: none;
@@ -395,7 +395,7 @@
     padding: 0;
 }
 
-.planner-planned-meal > button {
+:where(.pw-team-planner) .planner-planned-meal > button {
     border: none;
     background: transparent;
     padding: 0;
@@ -408,7 +408,7 @@
 }
 
 /* Three-dot menu */
-.planner-meal-menu {
+:where(.pw-team-planner) .planner-meal-menu {
     position: absolute;
     top: -31px;
     right: 0;
@@ -417,7 +417,7 @@
 }
 
 
-.planner-meal-menu summary {
+:where(.pw-team-planner) .planner-meal-menu summary {
     list-style: none;
     cursor: pointer;
     font-size: 1.3rem;
@@ -428,15 +428,15 @@
     border-radius: 6px;
 }
 
-.planner-meal-menu summary::-webkit-details-marker {
+:where(.pw-team-planner) .planner-meal-menu summary::-webkit-details-marker {
     display: none;
 }
 
-.planner-meal-menu summary:hover {
+:where(.pw-team-planner) .planner-meal-menu summary:hover {
     background: rgba(255, 255, 255, 0.5);
 }
 
-.planner-meal-menu-content {
+:where(.pw-team-planner) .planner-meal-menu-content {
     position: absolute;
     top: 28px;
     right: 0;
@@ -453,7 +453,7 @@
     gap: 10px;
 }
 
-.planner-meal-menu-content label {
+:where(.pw-team-planner) .planner-meal-menu-content label {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -461,26 +461,26 @@
     color: var(--muted);
 }
 
-.planner-meal-menu-content input,
-.planner-meal-menu-content select {
+:where(.pw-team-planner) .planner-meal-menu-content input,
+:where(.pw-team-planner) .planner-meal-menu-content select {
     width: 100%;
     min-width: 0;
     font-size: 0.75rem;
 }
 
-.planner-meal-menu-content button {
+:where(.pw-team-planner) .planner-meal-menu-content button {
     font-size: 0.75rem;
     color: #b83e2e;
     cursor: pointer;
 }
 
 /* Make room for the three-dot menu */
-.planner-planned-meal {
+:where(.pw-team-planner) .planner-planned-meal {
     position: relative;
     padding-right: 24px;
 }
 
-.planner-meal-menu summary {
+:where(.pw-team-planner) .planner-meal-menu summary {
     font-size: 1.3rem;
     font-weight: 700;
     line-height: 1;
@@ -489,7 +489,7 @@
 
 
 /* Recipe prep time */
-.planner-meal-time {
+:where(.pw-team-planner) .planner-meal-time {
     margin: 6px 0 0;
     font-size: 0.72rem;
     color: #806d5e;
@@ -497,32 +497,32 @@
 }
 
 /* Taller, more square meal cards */
-.planner-meal-slot {
+:where(.pw-team-planner) .planner-meal-slot {
     min-height: 190px;
     padding: 16px;
     gap: 14px;
 }
 
 /* Slightly wider than tall meal cards */
-.planner-meal-slot {
+:where(.pw-team-planner) .planner-meal-slot {
     min-height: 200px;
     padding: 16px;
 }
 
 @media (max-width: 1200px) {
-    .planner-grid {
+    :where(.pw-team-planner) .planner-grid {
         grid-template-columns: repeat(7, 230px);
     }
 }
 
 @media (max-width: 768px) {
-    .planner-grid {
+    :where(.pw-team-planner) .planner-grid {
         grid-template-columns: repeat(7, 230px);
     }
 }
 
 @media (max-width: 480px) {
-    .planner-grid {
+    :where(.pw-team-planner) .planner-grid {
         grid-template-columns: repeat(7, 230px);
     }
 }
@@ -535,7 +535,7 @@ main:has(.planner-scroll) {
 }
 
 /* Calendar scroll toolbar */
-.planner-scroll-toolbar {
+:where(.pw-team-planner) .planner-scroll-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -543,27 +543,27 @@ main:has(.planner-scroll) {
     margin: 18px 0 14px;
 }
 
-.planner-scroll-hint {
+:where(.pw-team-planner) .planner-scroll-hint {
     margin: 0;
     font-size: 0.78rem;
     font-weight: 500;
     color: #987661;
 }
 
-.planner-scroll-controls {
+:where(.pw-team-planner) .planner-scroll-controls {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.planner-visible-days {
+:where(.pw-team-planner) .planner-visible-days {
     font-size: 0.72rem;
     color: #987661;
     margin-right: 18px;
     white-space: nowrap;
 }
 
-.planner-scroll-arrow {
+:where(.pw-team-planner) .planner-scroll-arrow {
     width: 34px;
     height: 34px;
     display: flex;
@@ -577,11 +577,11 @@ main:has(.planner-scroll) {
     font-size: 1rem;
 }
 
-.planner-scroll-arrow:hover:not(:disabled) {
+:where(.pw-team-planner) .planner-scroll-arrow:hover:not(:disabled) {
     background: #5e412f;
 }
 
-.planner-scroll-arrow:disabled {
+:where(.pw-team-planner) .planner-scroll-arrow:disabled {
     background: #eee4d6;
     color: #c7b5a3;
     border-color: #eee4d6;
@@ -589,7 +589,7 @@ main:has(.planner-scroll) {
 }
 
 /* Fade indicating more calendar content */
-.planner-scroll-container {
+:where(.pw-team-planner) .planner-scroll-container {
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -597,7 +597,7 @@ main:has(.planner-scroll) {
 }
 
 /* Right-edge fade, only when more days are available */
-.planner-scroll-container::after {
+:where(.pw-team-planner) .planner-scroll-container::after {
     content: "";
     position: absolute;
     top: 0;
@@ -616,13 +616,13 @@ main:has(.planner-scroll) {
     transition: opacity 0.2s ease;
 }
 
-.planner-scroll-container.has-more-right::after {
+:where(.pw-team-planner) .planner-scroll-container.has-more-right::after {
     opacity: 1;
 }
 
 
 /* Calendar scroll footer */
-.planner-scroll-footer {
+:where(.pw-team-planner) .planner-scroll-footer {
     display: flex;
     justify-content: space-between;
     gap: 16px;
@@ -632,21 +632,21 @@ main:has(.planner-scroll) {
 }
 
 @media (max-width: 600px) {
-    .planner-visible-days {
+    :where(.pw-team-planner) .planner-visible-days {
         display: none;
     }
 
-    .planner-scroll-footer {
+    :where(.pw-team-planner) .planner-scroll-footer {
         flex-wrap: wrap;
     }
 
-    .planner-scroll-toolbar {
+    :where(.pw-team-planner) .planner-scroll-toolbar {
         gap: 8px;
     }
 }
 
 /* Cleaner meal action menu */
-.planner-meal-menu-content {
+:where(.pw-team-planner) .planner-meal-menu-content {
     width: 210px;
     padding: 6px;
     gap: 0;
@@ -656,11 +656,11 @@ main:has(.planner-scroll) {
     box-shadow: 0 10px 25px rgba(60, 40, 25, 0.13);
 }
 
-.planner-menu-action {
+:where(.pw-team-planner) .planner-menu-action {
     border-bottom: 1px solid #f0e6da;
 }
 
-.planner-menu-action summary {
+:where(.pw-team-planner) .planner-menu-action summary {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -672,18 +672,18 @@ main:has(.planner-scroll) {
     text-align: left;
 }
 
-.planner-menu-action summary:hover {
+:where(.pw-team-planner) .planner-menu-action summary:hover {
     background: #f8efe4;
 }
 
-.planner-menu-action summary span {
+:where(.pw-team-planner) .planner-menu-action summary span {
     width: 18px;
     font-size: 1rem;
     color: #76543d;
 }
 
-.planner-menu-action input,
-.planner-menu-action select {
+:where(.pw-team-planner) .planner-menu-action input,
+:where(.pw-team-planner) .planner-menu-action select {
     width: calc(100% - 20px);
     margin: 0 10px 10px;
     padding: 8px;
@@ -692,7 +692,7 @@ main:has(.planner-scroll) {
     background: white;
 }
 
-.planner-menu-delete {
+:where(.pw-team-planner) .planner-menu-delete {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -706,18 +706,18 @@ main:has(.planner-scroll) {
     cursor: pointer;
 }
 
-.planner-menu-delete:hover {
+:where(.pw-team-planner) .planner-menu-delete:hover {
     background: #f9e9e5;
     border-radius: 7px;
 }
 
-.planner-menu-delete span {
+:where(.pw-team-planner) .planner-menu-delete span {
     width: 18px;
     font-size: 1.1rem;
 }
 
 /* Feedback while a meal is being saved */
-.planner-saving {
+:where(.pw-team-planner) .planner-saving {
     margin: 8px 0 0;
     font-size: 0.75rem;
     font-weight: 600;
@@ -725,7 +725,7 @@ main:has(.planner-scroll) {
 }
 
 /* Meal planner error notification */
-.planner-error {
+:where(.pw-team-planner) .planner-error {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -738,13 +738,13 @@ main:has(.planner-scroll) {
     color: #873b2c;
 }
 
-.planner-error-content {
+:where(.pw-team-planner) .planner-error-content {
     display: flex;
     align-items: flex-start;
     gap: 12px;
 }
 
-.planner-error-icon {
+:where(.pw-team-planner) .planner-error-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -758,19 +758,19 @@ main:has(.planner-scroll) {
     font-weight: 700;
 }
 
-.planner-error-content strong {
+:where(.pw-team-planner) .planner-error-content strong {
     display: block;
     margin-bottom: 4px;
     font-size: 0.85rem;
 }
 
-.planner-error-content p {
+:where(.pw-team-planner) .planner-error-content p {
     margin: 0;
     font-size: 0.8rem;
     line-height: 1.5;
 }
 
-.planner-error-close {
+:where(.pw-team-planner) .planner-error-close {
     flex-shrink: 0;
     border: none;
     background: transparent;
@@ -780,7 +780,7 @@ main:has(.planner-scroll) {
     cursor: pointer;
 }
 
-.planner-menu-trigger {
+:where(.pw-team-planner) .planner-menu-trigger {
     appearance: none;
     border: none;
     background: transparent;
@@ -793,10 +793,110 @@ main:has(.planner-scroll) {
     cursor: pointer;
 }
 
-.planner-meal-menu {
+:where(.pw-team-planner) .planner-meal-menu {
     z-index: 50;
 }
 
-.planner-meal-menu-content {
+:where(.pw-team-planner) .planner-meal-menu-content {
     z-index: 100;
+}
+
+/* ==========================================
+   WEEKLY PLANNER - DARK MODE FIX
+========================================== */
+
+html[data-theme="dark"] .pw-team-planner .planner-day {
+  background: transparent;
+  border: none;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot {
+  background: #29241f;
+  border-color: #57483b;
+  color: #f4e7d3;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot h3 {
+  color: #c9b7a5;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot > button {
+  color: #e5c7a8;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot > button:hover {
+  color: #ff9f80;
+}
+
+/* Color-coded meal categories */
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot.has-meal.breakfast {
+  background: #49391f;
+  border-color: #80643b;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot.has-meal.lunch {
+  background: #293d2b;
+  border-color: #496c48;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot.has-meal.dinner {
+  background: #492d26;
+  border-color: #805144;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-slot.has-meal.snack {
+  background: #362d45;
+  border-color: #675780;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-planned-meal > button {
+  color: #fff1df;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-time,
+html[data-theme="dark"] .pw-team-planner .planner-saving {
+  color: #d4c2af;
+}
+
+/* Meal options menu */
+
+html[data-theme="dark"] .pw-team-planner .planner-meal-menu-content {
+  background: #332b23;
+  border-color: #57483b;
+  color: #f4e7d3;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-menu-action {
+  border-color: #57483b;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-menu-action summary,
+html[data-theme="dark"] .pw-team-planner .planner-menu-action summary span {
+  color: #f4e7d3;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-menu-action summary:hover {
+  background: #493d32;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-menu-action input,
+html[data-theme="dark"] .pw-team-planner .planner-menu-action select {
+  background: #211c17;
+  color: #f4e7d3;
+  border-color: #57483b;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-menu-delete {
+  color: #ff9d8c;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-menu-delete:hover {
+  background: #492d26;
+}
+
+html[data-theme="dark"] .pw-team-planner .planner-scroll-arrow {
+  background: #332b23;
+  color: #f4e7d3;
+  border-color: #57483b;
 }

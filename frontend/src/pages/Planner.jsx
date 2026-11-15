@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Modal from "../components/Modal";
 import RecipeDetail from "../components/RecipeDetail";
 import { getRecipes, getRecipe, getMealPlan, addMealPlanEntry, deleteMealPlanEntry, updateMealPlanEntry } from "../api"; 
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import "../styles/planner.css";
 
 const MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack"];
@@ -27,9 +27,32 @@ function formatDate(date) {
 }
 
 export default function Planner() {
-    const [weekStart, setWeekStart] = useState(() => 
+    const location = useLocation();
+    const [weekStart, setWeekStart] = useState(() =>
         getWeekStart(new Date())
     );
+
+    useEffect(() => {
+        const requested = new URLSearchParams(
+            location.search
+        ).get("start");
+
+        if (!requested) return;
+
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(requested)) {
+            return;
+        }
+
+        const date = new Date(
+            requested + "T12:00:00"
+        );
+
+        if (Number.isNaN(date.getTime())) {
+            return;
+        }
+
+        setWeekStart(getWeekStart(date));
+    }, [location.key, location.search]);
 
     // Recipe selection state
     const [selectedSlot, setSelectedSlot] = useState(null); 
