@@ -159,7 +159,7 @@ Features include:
 
 ---
 
-### 🥫 Pantry Inventory
+### ✅ Pantry Inventory
 
 Users can add, view, edit, and remove pantry ingredients.
 
@@ -189,7 +189,7 @@ Additional functionality:
 
 ---
 
-### 🍲 Smart Recipe Discovery
+### ✅ Smart Recipe Discovery
 
 Users can discover recipes based on ingredients they currently have.
 
@@ -223,7 +223,7 @@ Users can also sort recipes using the available sorting options.
 
 ---
 
-### 📋 Recipe Details
+### ✅ Recipe Details
 
 Users can open detailed recipe information without leaving the current page.
 
@@ -249,7 +249,7 @@ The recipe detail interface includes:
 
 ---
 
-### ❤️ Saved Recipes
+### ✅ Saved Recipes
 
 Users can maintain their own collection of favorite recipes.
 
@@ -274,7 +274,7 @@ Features include:
 
 <a id="dual-meal-planning-system"></a>
 
-## 📅 Dual Meal Planning System
+## ✅ Dual Meal Planning System
 
 PrepWise offers two integrated meal planner experiences that share the same PostgreSQL meal plan data.
 
@@ -1265,6 +1265,19 @@ psql -d prepwise_dev -f database/recipe_images.sql
 ```
 
 > Only run the seed script on a fresh development database. Do not reset or re-seed a shared production database.
+
+#### Reset the database to its default state
+
+PrepWise includes a reset script that rebuilds the schema and reloads the default seed data. For safety it only runs against a local database named `prepwise_test`.
+
+```bash
+createdb prepwise_test
+# in backend/.env
+TEST_DATABASE_URL=postgres://localhost:5432/prepwise_test
+
+cd backend
+npm run reset
+```
 
 The seeded demonstration user does not have a login password. Register your own account through the application.
 

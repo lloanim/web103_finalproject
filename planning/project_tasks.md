@@ -58,19 +58,19 @@
 ## Milestone 3 — GitHub Project Management
 
 **Deadline:** November 2, 2026  
-**Status:** Not Started
+**Status:** Complete
 
-- [ ] Present the three-minute project pitch.
-- [ ] Create a GitHub Project board.
-- [ ] Share the board with `codepathreview`.
-- [ ] Create at least five GitHub Issues based on planned features.
-- [ ] Assign issues and update project-board statuses.
-- [ ] Create five GitHub Milestones corresponding to the five project milestones.
-- [ ] Update GitHub Milestone completion percentages.
-- [ ] Begin application development.
-- [ ] Mark implemented README features with ✅ and include demonstration GIFs.
-- [ ] Complete five reflection questions.
-- [ ] Create `milestones/progress_report_3.md` using the required template.
+- [x] Present the three-minute project pitch.
+- [x] Create a GitHub Project board.
+- [x] Share the board with `codepathreview`.
+- [x] Create at least five GitHub Issues based on planned features.
+- [x] Assign issues and update project-board statuses.
+- [x] Create five GitHub Milestones corresponding to the five project milestones.
+- [x] Update GitHub Milestone completion percentages.
+- [x] Begin application development.
+- [x] Mark implemented README features with ✅ and include demonstration GIFs.
+- [x] Complete five reflection questions.
+- [x] Create `milestones/progress_report_3.md` using the required template.
 
 **Suggested initial issues:**
 1. Implement PostgreSQL schema and seed data.
@@ -82,32 +82,32 @@
 ## Milestone 4 — Application Development
 
 **Deadline:** November 9, 2026  
-**Status:** Not Started
+**Status:** Complete
 
-- [ ] Continue implementing assigned GitHub Issues.
-- [ ] Update project-board issue statuses.
-- [ ] Complete the Unit 8 GitHub Milestone.
-- [ ] Test completed functionality and fix bugs.
-- [ ] Update README feature completion indicators.
-- [ ] Record GIF demonstrations of completed features.
-- [ ] Complete five reflection questions.
-- [ ] Create `milestones/progress_report_4.md` using the required template.
+- [x] Continue implementing assigned GitHub Issues.
+- [x] Update project-board issue statuses.
+- [x] Complete the Unit 8 GitHub Milestone.
+- [x] Test completed functionality and fix bugs.
+- [x] Update README feature completion indicators.
+- [x] Record GIF demonstrations of completed features.
+- [x] Complete five reflection questions.
+- [x] Create `milestones/progress_report_4.md` using the required template.
 
 ## Milestone 5 — Final Project Submission
 
 **Deadline:** November 16, 2026  
-**Status:** Not Started
+**Status:** In progress
 
 - [ ] Complete and test all required baseline features.
-- [ ] Implement at least two approved custom features.
-- [ ] Deploy PrepWise to Render.
-- [ ] Add the deployed application URL to README.
-- [ ] Update GitHub Issues and completion statuses.
-- [ ] Mark implemented features with ✅ in README.
-- [ ] Include demonstration GIFs for implemented features.
+- [x] Implement at least two approved custom features.
+- [x] Deploy PrepWise to Render.
+- [x] Add the deployed application URL to README.
+- [x] Update GitHub Issues and completion statuses.
+- [x] Mark implemented features with ✅ in README.
+- [x] Include demonstration GIFs for implemented features.
 - [ ] Complete the Final Project Feature Checklist in `milestones/milestone5.md`.
-- [ ] Record and include a complete application walkthrough GIF.
-- [ ] Complete final reflection questions.
+- [x] Record and include a complete application walkthrough GIF.
+- [x] Complete final reflection questions.
 - [ ] Submit the completed project.
 
 **Required custom features:**
