@@ -262,6 +262,14 @@ Features include:
 - Add favorites to meal plans.
 - Access saved recipes across sessions.
 
+<div align="center">
+
+![Saved Recipes](planning/assets/saved-recipes.gif)
+
+**Saved Recipes**
+
+</div>
+
 ---
 
 <a id="dual-meal-planning-system"></a>
