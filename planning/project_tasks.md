@@ -96,19 +96,19 @@
 ## Milestone 5 — Final Project Submission
 
 **Deadline:** November 16, 2026  
-**Status:** In progress
+**Status:** Complete
 
-- [ ] Complete and test all required baseline features.
+- [x] Complete and test all required baseline features.
 - [x] Implement at least two approved custom features.
 - [x] Deploy PrepWise to Render.
 - [x] Add the deployed application URL to README.
 - [x] Update GitHub Issues and completion statuses.
 - [x] Mark implemented features with ✅ in README.
 - [x] Include demonstration GIFs for implemented features.
-- [ ] Complete the Final Project Feature Checklist in `milestones/milestone5.md`.
+- [x] Complete the Final Project Feature Checklist in `milestones/milestone5.md`.
 - [x] Record and include a complete application walkthrough GIF.
 - [x] Complete final reflection questions.
-- [ ] Submit the completed project.
+- [x] Submit the completed project.
 
 **Required custom features:**
 - Recipe Detail Modal
