@@ -22,6 +22,7 @@ import MealPlanner from "./pages/MealPlanner.jsx";
 import Planner from "./pages/Planner.jsx";
 import { Link, useLocation } from "react-router-dom";
 import SavedRecipes from "./pages/SavedRecipes.jsx";
+import RecipePage from "./pages/RecipePage.jsx";
 import KitchenStudio from "./pages/KitchenStudio.jsx";
 
 import "./styles/kitchen3.css";
@@ -224,6 +225,11 @@ export default function App() {
           <Route
             path="recipes"
             element={<Recipes />}
+          />
+
+          <Route
+            path="recipes/:id"
+            element={<RecipePage />}
           />
 
           <Route

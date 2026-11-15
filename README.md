@@ -1354,6 +1354,18 @@ Visit:
 
 Register a new account and begin managing your kitchen.
 
+Optional settings (AI Chef chat, local database reset) are listed in `backend/.env.example`.
+
+### Deploying on Render
+
+The app deploys as one Render **Web Service**: Express serves the API and, when `NODE_ENV=production`, the built React app.
+
+1. Create a Render PostgreSQL database (the free tier allows one per workspace) and load it once: `psql "<External Database URL>?sslmode=require" -f database/schema.sql -f database/seed.sql`
+2. Create a Web Service from this repo with:
+   - **Build command:** `cd frontend && npm install --include=dev && npm run build && cd ../backend && npm install`
+   - **Start command:** `cd backend && npm start`
+   - **Environment:** `NODE_ENV=production`, `DATABASE_URL` (the database's **Internal** URL as shown; if the database is in another Render account, use its **External** URL with `?sslmode=require` added), and optionally `GEMINI_API_KEY` for the AI Chef
+
 ---
 
 <a id="api-endpoints"></a>
