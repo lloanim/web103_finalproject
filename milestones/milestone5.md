@@ -12,7 +12,7 @@ This unit, be sure to complete all tasks listed below. To complete a task, place
 - [x] In `readme.md`, check off the features you have completed in this unit by adding a ✅ emoji in front of their title
   - [x] Under each feature you have completed, **include a GIF** showing feature functionality
 - [x] In this document, complete the **Reflection** section below
-- [ ] 🚩🚩🚩**Complete the Final Project Feature Checklist section below**, detailing each feature you completed in the project (ONLY include features you implemented, not features you planned)
+- [x] 🚩🚩🚩**Complete the Final Project Feature Checklist section below**, detailing each feature you completed in the project (ONLY include features you implemented, not features you planned)
 - [x] 🚩🚩🚩**Record a GIF showing a complete run-through of your app** that displays all the components included in the **Final Project Feature Checklist** below
   - [x] Include this GIF in the **Final Demo GIF** section below
 
@@ -36,7 +36,7 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
       - [x] the user can **update** an existing item by changing some or all of its values, such as changing the title of task
       - [x] the user can **delete** an existing item, such as a task
     - [x] Routes follow proper naming conventions
-  - [ ] The web app includes the ability to reset the database to its default state
+  - [x] The web app includes the ability to reset the database to its default state
 - [x] The project includes these frontend-specific features:
   - [x] At least one redirection, where users are able to navigate to a new page with a new URL within the app
   - [x] At least one interaction that the user can initiate and complete on the same page without navigating to a new page

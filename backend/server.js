@@ -14,6 +14,7 @@ import shoppingRoutes from "./routes/shoppingRoutes.js";
 import mealPlanRoutes from "./routes/mealPlanRoutes.js";
 import savedRecipesRoutes from "./routes/savedRecipesRoutes.js";
 import mealdbRoutes from "./routes/mealdbRoutes.js";
+import resetRoutes from "./routes/resetRoutes.js";
 
 import {
   requireAuth,
@@ -75,6 +76,9 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+
+// Local-only test database reset (guarded inside the route).
+app.use("/api/reset", resetRoutes);
 
 // ==========================================
 // AUTHENTICATED API ROUTES

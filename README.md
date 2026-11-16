@@ -1279,6 +1279,16 @@ cd backend
 npm run reset
 ```
 
+The running backend also exposes the reset as an API endpoint. It is off by default and only accepts requests from your own machine (it is always disabled when `NODE_ENV=production`):
+
+```bash
+# in backend/.env
+ENABLE_TEST_RESET=true
+
+# with the backend running (default port 3001)
+curl -X POST http://localhost:3001/api/reset -H "X-PrepWise-Request: 1"
+```
+
 The seeded demonstration user does not have a login password. Register your own account through the application.
 
 ### Step 4 — Configure Environment Variables
